@@ -1,8 +1,8 @@
-import camelcaseKeys from './camelcase-keys/index';
-import 'whatwg-fetch';
+import camelcaseKeys from "./camelcase-keys/index";
+import "whatwg-fetch";
 
 const Expresso = {};
-const baseUrl = 'http://localhost:4000/api';
+const baseUrl = "http://localhost:4000/api";
 
 Expresso.getEmployees = () => {
   const url = `${baseUrl}/employees`;
@@ -32,11 +32,11 @@ Expresso.getEmployee = id => {
 Expresso.createEmployee = employee => {
   const url = `${baseUrl}/employees`;
   const fetchOptions = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({employee: employee})
+    body: JSON.stringify({ employee: employee })
   };
   return fetch(url, fetchOptions).then(response => {
     if (!response.ok) {
@@ -51,11 +51,11 @@ Expresso.createEmployee = employee => {
 Expresso.updateEmployee = employee => {
   const url = `${baseUrl}/employees/${employee.id}`;
   const fetchOptions = {
-    method: 'PUT',
+    method: "PUT",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({employee: employee})
+    body: JSON.stringify({ employee: employee })
   };
   return fetch(url, fetchOptions).then(response => {
     if (!response.ok) {
@@ -71,11 +71,11 @@ Expresso.restoreEmployee = employee => {
   employee.isCurrentEmployee = 1;
   const url = `${baseUrl}/employees/${employee.id}`;
   const fetchOptions = {
-    method: 'PUT',
+    method: "PUT",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({employee: employee})
+    body: JSON.stringify({ employee: employee })
   };
   return fetch(url, fetchOptions).then(response => {
     if (!response.ok) {
@@ -90,7 +90,7 @@ Expresso.restoreEmployee = employee => {
 Expresso.deleteEmployee = id => {
   const url = `${baseUrl}/employees/${id}`;
   const fetchOptions = {
-    method: 'DELETE'
+    method: "DELETE"
   };
   return fetch(url, fetchOptions);
 };
@@ -123,11 +123,11 @@ Expresso.getMenu = id => {
 Expresso.createMenu = menu => {
   const url = `${baseUrl}/menus`;
   const fetchOptions = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({menu: menu})
+    body: JSON.stringify({ menu: menu })
   };
   return fetch(url, fetchOptions).then(response => {
     if (!response.ok) {
@@ -142,11 +142,11 @@ Expresso.createMenu = menu => {
 Expresso.updateMenu = menu => {
   const url = `${baseUrl}/menus/${menu.id}`;
   const fetchOptions = {
-    method: 'PUT',
+    method: "PUT",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({menu: menu})
+    body: JSON.stringify({ menu: menu })
   };
   return fetch(url, fetchOptions).then(response => {
     if (!response.ok) {
@@ -161,7 +161,7 @@ Expresso.updateMenu = menu => {
 Expresso.deleteMenu = id => {
   const url = `${baseUrl}/menus/${id}`;
   const fetchOptions = {
-    method: 'DELETE'
+    method: "DELETE"
   };
   return fetch(url, fetchOptions);
 };
@@ -181,11 +181,11 @@ Expresso.getMenuItems = menuId => {
 Expresso.createMenuItem = (menuItem, menuId) => {
   const url = `${baseUrl}/menus/${menuId}/menu-items`;
   const fetchOptions = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({menuItem: menuItem})
+    body: JSON.stringify({ menuItem: menuItem })
   };
   return fetch(url, fetchOptions).then(response => {
     if (!response.ok) {
@@ -200,11 +200,11 @@ Expresso.createMenuItem = (menuItem, menuId) => {
 Expresso.updateMenuItem = (menuItem, menuId) => {
   const url = `${baseUrl}/menus/${menuId}/menu-items/${menuItem.id}`;
   const fetchOptions = {
-    method: 'PUT',
+    method: "PUT",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({menuItem: menuItem})
+    body: JSON.stringify({ menuItem: menuItem })
   };
   return fetch(url, fetchOptions).then(response => {
     if (!response.ok) {
@@ -219,7 +219,7 @@ Expresso.updateMenuItem = (menuItem, menuId) => {
 Expresso.deleteMenuItem = (menuItemId, menuId) => {
   const url = `${baseUrl}/menus/${menuId}/menu-items/${menuItemId}`;
   const fetchOptions = {
-    method: 'DELETE'
+    method: "DELETE"
   };
   return fetch(url, fetchOptions);
 };
@@ -239,11 +239,11 @@ Expresso.getTimesheets = employeeId => {
 Expresso.createTimesheet = (timesheet, employeeId) => {
   const url = `${baseUrl}/employees/${employeeId}/timesheets`;
   const fetchOptions = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({timesheet: timesheet})
+    body: JSON.stringify({ timesheet: timesheet })
   };
   return fetch(url, fetchOptions).then(response => {
     if (!response.ok) {
@@ -258,11 +258,11 @@ Expresso.createTimesheet = (timesheet, employeeId) => {
 Expresso.updateTimesheet = (timesheet, employeeId) => {
   const url = `${baseUrl}/employees/${employeeId}/timesheets/${timesheet.id}`;
   const fetchOptions = {
-    method: 'PUT',
+    method: "PUT",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({timesheet: timesheet})
+    body: JSON.stringify({ timesheet: timesheet })
   };
   return fetch(url, fetchOptions).then(response => {
     if (!response.ok) {
@@ -277,7 +277,7 @@ Expresso.updateTimesheet = (timesheet, employeeId) => {
 Expresso.deleteTimesheet = (timesheetId, employeeId) => {
   const url = `${baseUrl}/employees/${employeeId}/timesheets/${timesheetId}`;
   const fetchOptions = {
-    method: 'DELETE'
+    method: "DELETE"
   };
   return fetch(url, fetchOptions);
 };

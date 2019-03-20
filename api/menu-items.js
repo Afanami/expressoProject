@@ -50,7 +50,6 @@ menuItemsRouter.get("/", validateMenu, (req, res, next) => {
 
 // Post a menu item to a menu
 menuItemsRouter.post("/", validateMenu, (req, res, next) => {
-  console.log(req);
   const name = req.body.menuItem.name;
   const description = req.body.menuItem.description; // Not required
   const inventory = req.body.menuItem.inventory;
